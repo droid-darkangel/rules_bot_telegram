@@ -5,10 +5,10 @@ import database as data
 admins_1 = []
 admins_2 = []
 
-group_id_1 = 
-group_id_2 = 
+group_id_1 = int
+group_id_2 = int
 
-gl_admin = 
+gl_admin = int
 
 token = ''
 
