@@ -2,15 +2,15 @@ from aiogram import Dispatcher, Bot, executor,types
 import logging
 import database as data
 
-admins_mans_99_years = [873443711, 5444440623]
-admin_hearts = [1490294714, 873443711]
+admins_1 = []
+admins_2 = []
 
-mans_99_years_group_id = -1001881199517
-hearts_group_id = -1001897792628
+group_id_1 = 
+group_id_2 = 
 
-gl_admin = 873443711
+gl_admin = 
 
-token = '5404900170:AAG-hQau7mo3a1xtRDkbF8AmRmxnn5OdZK0'
+token = ''
 
 bot = Bot(token=token)
 dp = Dispatcher(bot)
@@ -27,19 +27,19 @@ async def rules(msg: types.Message):
     print(usr_id)
     print(rule)
 
-    if group_id == mans_99_years_group_id and usr_id in admins_mans_99_years:
-        data.sql.execute(f"INSERT INTO rul VALUES ('{mans_99_years_group_id}','')")
+    if group_id == group_id_1 and usr_id in admins_1:
+        data.sql.execute(f"INSERT INTO rul VALUES ('{group_id_1}','')")
         data.db.commit()
-        data.sql.execute(f'UPDATE rul SET rules = "{rule}" WHERE group_id = "{mans_99_years_group_id}"')
+        data.sql.execute(f'UPDATE rul SET rules = "{rule}" WHERE group_id = "{group_id_1}"')
         data.db.commit()
 
         await msg.answer(f'Правила чата были обновлены, теперь они:\n{rule}')
 
 
-    elif group_id == hearts_group_id and usr_id in admin_hearts:
-        data.sql.execute(f"INSERT INTO rul VALUES ('{hearts_group_id}','')")
+    elif group_id == group_id_2 and usr_id in admins_2:
+        data.sql.execute(f"INSERT INTO rul VALUES ('{group_id_2}','')")
         data.db.commit()
-        data.sql.execute(f'UPDATE rul SET rules = "{rule}" WHERE group_id = "{hearts_group_id}"')
+        data.sql.execute(f'UPDATE rul SET rules = "{rule}" WHERE group_id = "{group_id_2}"')
         data.db.commit()
 
         await msg.answer(f'Правила чата были обновлены, теперь они:\n{rule}')
